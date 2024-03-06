@@ -52,4 +52,11 @@ public class TestListExamples {
       assertEquals(out, ListExamples.merge(a,b));
       assertEquals(out, ListExamples.merge(b,a));
   }
+  @Test(timeout = 500)
+  public void testFilter1() {
+    List<String> list = Arrays.asList("moon","noon","moon");
+	  List<String> filtered = ListExamples.filter(list,new IsMoon());
+	  List<String> expected = Arrays.asList("moon","moon");
+	  assertEquals(filtered,expected);
+}
 }
